@@ -11,25 +11,26 @@
 		<style>
 			/* General layout of the page */
 			body {
-				padding-top: 40px; /* Adds space at the top of the body */
+				background-color: #121212; /* Dark background for dark mode */
+				color: #e0e0e0; /* Light text for dark mode */
 				font-family: Arial, sans-serif;
-				background-color: #f4f4f9;
+				padding-top: 40px; /* Adds space at the top of the body */
 				text-align: center; /* Centers all content */
 			}
 
-			/* Hello and Welcome text */
+			/* Welcome text styling */
 			.welcome-text {
 				font-size: 36px;
 				font-weight: bold;
-				color: #333;
+				color: #ffffff; /* White text for dark mode */
 				margin-bottom: 40px; /* Adds space below the text */
 			}
 
 			/* Layout for images */
 			#main {
 				display: flex;
-				flex-wrap: wrap; /* Ensures images wrap into rows */
-				justify-content: space-between; /* Adds spacing between images */
+				flex-wrap: wrap; /* Ensures images wrap into rows if needed */
+				justify-content: space-between; /* Adds space between images */
 				margin: 0 auto;
 				max-width: 1200px; /* Optional: Limits the width of the content */
 				padding: 0 20px; /* Adds padding on both sides */
@@ -37,12 +38,12 @@
 
 			/* Style for individual image containers */
 			.thumb {
-				margin: 20px 10px; /* Adds margin around each image (top/bottom: 20px, left/right: 10px) */
+				margin: 20px; /* Adds margin around each image (top/bottom: 20px, left/right: 20px) */
 				padding: 15px; /* Padding inside the container */
-				border: 1px solid #ddd; /* Optional: Border around each image */
-				border-radius: 8px; /* Optional: Rounded corners */
-				background-color: #fff; /* Optional: Background color for the container */
-				width: calc(50% - 20px); /* Makes each image take 50% width (two per row) */
+				border: 1px solid #444; /* Border around each image */
+				border-radius: 8px; /* Rounded corners for each image */
+				background-color: #1e1e1e; /* Slightly lighter background for each image */
+				width: calc(50% - 40px); /* Ensures two images per row with spacing */
 				box-sizing: border-box; /* Ensures padding and margin don't overflow */
 			}
 
@@ -52,13 +53,24 @@
 				margin: 0 auto; /* Centers the image horizontally */
 				padding: 10px; /* Adds padding around the image */
 				border-radius: 8px; /* Optional: Rounds the corners of the image */
-				background-color: #f1f1f1; /* Optional: Adds a background behind the image */
+				background-color: #f1f1f1; /* Adds a light background behind the image */
 			}
 
 			/* Adds space between the text and image */
 			.thumb h2, .thumb p {
 				margin-top: 10px;
 				margin-bottom: 10px;
+				color: #e0e0e0; /* Light text color for titles and descriptions */
+			}
+
+			/* Link styling for dark mode */
+			a {
+				color: #bb86fc; /* Light purple color for links in dark mode */
+				text-decoration: none; /* Removes underline from links */
+			}
+
+			a:hover {
+				text-decoration: underline; /* Underline links on hover */
 			}
 
 		</style>
@@ -138,6 +150,55 @@
 						</section>
 						<p class="copyright">
 							&copy; Sasha Rodriguez dankzij <a href="http://www.benjamintjoa.nl">Benjamin Tjoa</a>'s assistentie.</p>
+					</div>
+					<div>
+						<section>
+							<h2>Is er een probleem? Wij willen graag dit probleem fixen, dus stuur het snel naar ons hieronder.</h2>
+							
+							<div class="form-container">
+								<div class="form-section">
+									<h3>Sasha Rodriguez (Owner)</h3>
+									<form action="https://formspree.io/f/meoqrdny" method="POST">
+										<div class="fields">
+											<div class="field half">
+												<input type="text" name="name" id="name" placeholder="Naam" />
+											</div>
+											<div class="field half">
+												<input type="text" name="email" id="email" placeholder="Email" />
+											</div>
+											<div class="field">
+												<textarea name="message" id="message" rows="4" placeholder="Bericht"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Verstuur" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</div>
+
+								<div class="form-section">
+									<h3>Benjamin Tjoa (Admin)</h3>
+									<form action="https://formspree.io/f/xeoqrddy" method="POST">
+										<div class="fields">
+											<div class="field half">
+												<input type="text" name="name" id="name" placeholder="Naam" />
+											</div>
+											<div class="field half">
+												<input type="text" name="email" id="email" placeholder="Email" />
+											</div>
+											<div class="field">
+												<textarea name="message" id="message" rows="4" placeholder="Bericht"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Verstuur" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</div>
+							</div>
+						</section>
 					</div>
 				</div>
 			</footer>
