@@ -32,6 +32,7 @@
         .thumb {
             width: 48%;
             text-align: center;
+            position: relative;
         }
 
         .thumb img {
@@ -39,11 +40,61 @@
             border-radius: 35px; /* Makes the corners rounded */
         }
 
+        .hello-text {
+            position: absolute;
+            bottom: 10px;
+            left: 10px;
+            font-size: 18px;
+            color: white;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 5px;
+            border-radius: 5px;
+        }
+
         .welcome-message {
             text-align: center;
             font-size: 24px;
             margin: 20px 0;
             font-weight: bold;
+        }
+
+        /* Styling for the modal (large image) */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgb(0, 0, 0);
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
         }
     </style>
 </head>
@@ -68,52 +119,61 @@
         </header>
 
         <div id="main">
-           <article class="thumb">
-					<a href="images/fulls/gun.png" class="image"><img src="images/thumbs/pistool.png" alt="" /></a>
-					<h2>Pistool</h2>
-					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/spinner.png" class="image"><img src="images/thumbs/spinner.png" alt="" /></a>
-					<h2>Spinner</h2>
-					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/lambo.png" class="image"><img src="images/thumbs/lambo.png" alt="" /></a>
-					<h2>Lambo</h2>
-					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/glider.png" class="image"><img src="images/thumbs/glider.png" alt="" /></a>
-					<h2>Zweefvliegtuigje</h2>
-					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-				</article>
-				<article class="thumb">
-					<a href="images/thumbs/naam-sleutel-hanger.png" class="image"><img src="images/thumbs/naam-sleutel-hanger.png" alt="" /></a>
-					<h2>Sleutelhanger</h2>
-					<p>Dit item kan veranderd worden naar je eigen naam en/of op de achterkant ook telefoonnummer. Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/ice-dragon.png" class="image"><img src="images/thumbs/ice-dragon.png" alt="" /></a>
-					<h2>Draak</h2>
-					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt="" /></a>
-					<h2>Mauris id tellus arcu</h2>
-					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt="" /></a>
-					<h2>Nunc vehicula id nulla</h2>
-					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-				</article>
-				<article class="thumb">
-					<a href="images/fulls/09.jpg" class="image"><img src="images/thumbs/09.jpg" alt="" /></a>
-					<h2>Neque et faucibus viverra</h2>
-					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-				</article>
-			</div>
+            <article class="thumb">
+                <a href="images/fulls/gun.png" class="image"><img src="images/thumbs/pistool.png" alt="" /></a>
+                <span class="hello-text">Hello there</span>
+                <h2>Pistool</h2>
+                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+            </article>
+            <article class="thumb">
+                <a href="images/fulls/spinner.png" class="image"><img src="images/thumbs/spinner.png" alt="" /></a>
+                <span class="hello-text">Hello there</span>
+                <h2>Spinner</h2>
+                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+            </article>
+            <article class="thumb">
+                <a href="images/fulls/lambo.png" class="image"><img src="images/thumbs/lambo.png" alt="" /></a>
+                <span class="hello-text">Hello there</span>
+                <h2>Lambo</h2>
+                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+            </article>
+            <article class="thumb">
+                <a href="images/fulls/glider.png" class="image"><img src="images/thumbs/glider.png" alt="" /></a>
+                <span class="hello-text">Hello there</span>
+                <h2>Zweefvliegtuigje</h2>
+                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+            </article>
+            <article class="thumb">
+                <a href="images/thumbs/naam-sleutel-hanger.png" class="image"><img src="images/thumbs/naam-sleutel-hanger.png" alt="" /></a>
+                <span class="hello-text">Hello there</span>
+                <h2>Sleutelhanger</h2>
+                <p>Dit item kan veranderd worden naar je eigen naam en/of op de achterkant ook telefoonnummer. Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+            </article>
+            <article class="thumb">
+                <a href="images/fulls/ice-dragon.png" class="image"><img src="images/thumbs/ice-dragon.png" alt="" /></a>
+                <span class="hello-text">Hello there</span>
+                <h2>Draak</h2>
+                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+            </article>
+            <article class="thumb">
+                <a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt="" /></a>
+                <span class="hello-text">Hello there</span>
+                <h2>Mauris id tellus arcu</h2>
+                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+            </article>
+            <article class="thumb">
+                <a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt="" /></a>
+                <span class="hello-text">Hello there</span>
+                <h2>Nunc vehicula id nulla</h2>
+                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+            </article>
+            <article class="thumb">
+                <a href="images/fulls/09.jpg" class="image"><img src="images/thumbs/09.jpg" alt="" /></a>
+                <span class="hello-text">Hello there</span>
+                <h2>Neque et faucibus viverra</h2>
+                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+            </article>
+        </div>
 
         <footer id="footer" class="panel">
             <div class="inner split">
@@ -191,6 +251,29 @@
     <script src="assets/js/breakpoints.min.js"></script>
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
+
+    <!-- Script for closing image modal when clicking outside -->
+    <script>
+        var modal = document.querySelector(".modal");
+        var images = document.querySelectorAll(".thumb a");
+        var modalImg = document.querySelector(".modal-content");
+
+        images.forEach(function (imgLink) {
+            imgLink.onclick = function (e) {
+                e.preventDefault();
+                var imgSrc = this.href;
+                modal.style.display = "block";
+                modalImg.src = imgSrc;
+            };
+        });
+
+        // Close the modal when clicking outside the image
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+    </script>
 
 </body>
 
