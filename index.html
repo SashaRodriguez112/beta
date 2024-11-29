@@ -9,19 +9,28 @@
 		<link rel="icon" href="https://www.3d-gadgetz.nl/images/ico.ico" type="image/ico">
 
 		<style>
-			/* Spacing between each article */
+			/* Add space around the images */
 			.thumb {
-				margin-bottom: 20px; /* Adds space between each image block */
+				margin: 20px 0; /* Adds space above and below each image section */
+				padding: 15px; /* Adds padding inside the .thumb container */
+				border: 1px solid #ddd; /* Optional: Adds a border for a clean look */
+				border-radius: 8px; /* Optional: Rounds the corners for a modern look */
+				background-color: #f9f9f9; /* Optional: Adds a light background for separation */
 			}
 
-			/* Add space above the text in each article */
+			/* Adjust the image spacing */
+			.thumb .image {
+				display: block; /* Ensures the image takes up the full width */
+				margin: 0 auto; /* Centers the image */
+				padding: 10px; /* Adds space around the image */
+				border-radius: 8px; /* Optional: Rounds the image corners */
+				background-color: #fff; /* Optional: Adds a background behind the image */
+			}
+
+			/* Add space between the image and the text below */
 			.thumb h2, .thumb p {
 				margin-top: 10px; /* Adds space above the text */
-			}
-
-			/* Spacing between images */
-			.thumb .image {
-				margin-bottom: 10px; /* Adds space between the image and the text below it */
+				margin-bottom: 10px; /* Adds space below the text */
 			}
 
 			/* Optional: Adjust the overall margin of the body or individual sections */
