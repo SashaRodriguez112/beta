@@ -9,13 +9,19 @@
     <link rel="icon" href="https://www.3d-gadgetz.nl/images/ico.ico" type="image/ico">
 
     <style>
-        /* General dark mode layout */
+        /* Apply default zoom of 90% */
+        html {
+            transform: scale(0.9); /* Scale the content by 90% */
+            transform-origin: top left; /* Set the origin point to the top-left corner */
+        }
+
+        /* Ensure that the body does not get scaled inappropriately */
         body {
+            margin: 0; /* Remove any default body margin */
+            overflow-x: hidden; /* Prevent horizontal overflow if scaling results in overflow */
             background-color: #121212; /* Dark background */
             color: #e0e0e0; /* Light text color */
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
             text-align: center;
         }
 
@@ -23,7 +29,7 @@
         .welcome-text {
             font-size: 36px;
             font-weight: bold;
-            color: #ffffff; /* White color for text */
+            color: #ffffff;
             margin-top: 40px;
             margin-bottom: 40px;
         }
@@ -31,51 +37,41 @@
         /* Layout for images */
         #main {
             display: flex;
-            flex-wrap: wrap; /* Ensure the images wrap to new lines if needed */
-            justify-content: center; /* Center images horizontally */
-            gap: 20px; /* Space between images */
-            padding: 0 20px; /* Padding on the sides */
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            padding: 0 20px;
         }
 
         /* Style for individual image containers */
         .thumb {
-            width: calc(50% - 20px); /* Default two images per row with spacing */
-            margin: 10px; /* Margin for spacing around each image */
-            padding: 10px; /* Padding inside the container */
-            background-color: #1e1e1e; /* Dark background for image containers */
-            border-radius: 8px; /* Rounded corners */
-            border: 1px solid #444; /* Border color */
-            box-sizing: border-box; /* Ensure padding and margin are included in width calculation */
+            width: calc(50% - 20px);
+            margin: 10px;
+            padding: 10px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            border: 1px solid #444;
+            box-sizing: border-box;
         }
 
         /* Ensuring images fit well inside their containers */
         .thumb img {
-            width: 100%; /* Make image fill its container */
-            height: auto; /* Maintain image aspect ratio */
-            border-radius: 8px; /* Optional: Round the corners of images */
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
         }
 
         /* Text below each image */
         .thumb h2, .thumb p {
             margin-top: 10px;
             margin-bottom: 10px;
-            color: #e0e0e0; /* Light color for the text */
+            color: #e0e0e0;
         }
 
-        /* Link styling */
-        a {
-            color: #bb86fc; /* Light purple color for links */
-            text-decoration: none;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Media query for smaller screens (e.g., mobile) */
+        /* Media query for smaller screens */
         @media (max-width: 768px) {
             .thumb {
-                width: 100%; /* Stack images one per row on smaller screens */
+                width: 100%;
             }
         }
     </style>
@@ -85,7 +81,6 @@
 
     <div id="wrapper">
 
-        <!-- Header with title and navigation -->
         <header id="header">
             <h1><a href="index.html"><strong>3D-Gadgetz.nl</strong> by Sasha Rodriguez</a> and <a href="https://www.benjamintjoa.com" target="_blank">Benjamin Tjoa</a></h1>
             <nav>
@@ -130,35 +125,35 @@
 
             <!-- Fifth Image Block -->
             <article class="thumb">
-                <a href="images/fulls/naam-sleutel-hanger.png" class="image"><img src="images/thumbs/naam-sleutel-hanger.png" alt="Sleutelhanger" /></a>
+                <a href="images/thumbs/naam-sleutel-hanger.png" class="image"><img src="images/thumbs/naam-sleutel-hanger.png" alt="Keychain" /></a>
                 <h2>Sleutelhanger</h2>
                 <p>Dit item kan veranderd worden naar je eigen naam en/of op de achterkant ook telefoonnummer. Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
             </article>
 
             <!-- Sixth Image Block -->
             <article class="thumb">
-                <a href="images/fulls/ice-dragon.png" class="image"><img src="images/thumbs/ice-dragon.png" alt="Draak" /></a>
+                <a href="images/fulls/ice-dragon.png" class="image"><img src="images/thumbs/ice-dragon.png" alt="Dragon" /></a>
                 <h2>Draak</h2>
                 <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
             </article>
 
             <!-- Seventh Image Block -->
             <article class="thumb">
-                <a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt="Mauris id tellus arcu" /></a>
+                <a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt="Image 7" /></a>
                 <h2>Mauris id tellus arcu</h2>
                 <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
             </article>
 
             <!-- Eighth Image Block -->
             <article class="thumb">
-                <a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt="Nunc vehicula id nulla" /></a>
+                <a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt="Image 8" /></a>
                 <h2>Nunc vehicula id nulla</h2>
                 <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
             </article>
 
             <!-- Ninth Image Block -->
             <article class="thumb">
-                <a href="images/fulls/09.jpg" class="image"><img src="images/thumbs/09.jpg" alt="Neque et faucibus viverra" /></a>
+                <a href="images/fulls/09.jpg" class="image"><img src="images/thumbs/09.jpg" alt="Image 9" /></a>
                 <h2>Neque et faucibus viverra</h2>
                 <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
             </article>
@@ -170,9 +165,8 @@
                 <div>
                     <section>
                         <h2>Welkom!</h2>
-                        <p>Hoi, deze website is gemaakt door Sasha Rodriguez en Benjamin Tjoa. Deze site is net gelaunched dus kan het zijn dat er problemen of errors zijn. Als dit zo is, stuur dan een mail naar 2324116@hageveld.nl (Sasha Rodriguez) of naar 2223215@hageveld.nl (Benjamin Tjoa).</p>
+                        <p>Hoi, deze website is gemaakt door Sasha Rodriguez en Benjamin Tjoa.</p>
                     </section>
-                    <p class="copyright">&copy; Sasha Rodriguez dankzij <a href="http://www.benjamintjoa.nl">Benjamin Tjoa</a>'s assistentie.</p>
                 </div>
             </div>
         </footer>
