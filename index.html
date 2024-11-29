@@ -9,13 +9,38 @@
 		<link rel="icon" href="https://www.3d-gadgetz.nl/images/ico.ico" type="image/ico">
 
 		<style>
+			/* Spacing between each article */
+			.thumb {
+				margin-bottom: 20px; /* Adds space between each image block */
+			}
+
+			/* Add space above the text in each article */
+			.thumb h2, .thumb p {
+				margin-top: 10px; /* Adds space above the text */
+			}
+
+			/* Spacing between images */
+			.thumb .image {
+				margin-bottom: 10px; /* Adds space between the image and the text below it */
+			}
+
+			/* Optional: Adjust the overall margin of the body or individual sections */
+			body {
+				padding-top: 20px; /* Adds space at the top of the body */
+			}
+
+			/* Adjust spacing between the form sections in the footer */
 			.form-container {
 				display: flex;
 				justify-content: space-between;
-				gap: 20px;
+				gap: 40px; /* Increases space between the two form sections */
+				margin-top: 30px; /* Adds space above the form container */
 			}
-			.form-container .form-section {
+
+			/* Adjust spacing inside form sections */
+			.form-section {
 				width: 48%;
+				margin-bottom: 20px; /* Adds space between the form sections */
 			}
 		</style>
 	</head>
