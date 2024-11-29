@@ -1,150 +1,215 @@
 <!DOCTYPE HTML>
-<html lang="en">
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <title>3d-gadgetz.nl</title>
-    <link rel="stylesheet" href="assets/css/main.css" />
-    <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-    <link rel="icon" href="https://www.3d-gadgetz.nl/images/ico.ico" type="image/ico">
+<html>
+	<head>
+		<title>3d-gadgetz.nl</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="icon" href="https://www.3d-gadgetz.nl/images/ico.ico" type="image/ico">
 
-    <style>
-        /* General dark mode layout */
-        body {
-            background-color: #121212; /* Dark background */
-            color: #e0e0e0; /* Light text color */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-        }
+		<style>
+			/* General layout of the page */
+			body {
+				background-color: #121212; /* Dark background for dark mode */
+				color: #e0e0e0; /* Light text for dark mode */
+				font-family: Arial, sans-serif;
+				padding-top: 40px; /* Adds space at the top of the body */
+				text-align: center; /* Centers all content */
+			}
 
-        /* Welcome text at the top */
-        .welcome-text {
-            font-size: 36px;
-            font-weight: bold;
-            color: #ffffff; /* White color for text */
-            margin-top: 40px;
-            margin-bottom: 40px;
-        }
+			/* Welcome text styling */
+			.welcome-text {
+				font-size: 36px;
+				font-weight: bold;
+				color: #ffffff; /* White text for dark mode */
+				margin-bottom: 40px; /* Adds space below the text */
+			}
 
-        /* Layout for images */
-        #main {
-            display: flex;
-            flex-wrap: wrap; /* Ensure the images wrap to new lines */
-            justify-content: center; /* Center images horizontally */
-            gap: 20px; /* Space between images */
-            padding: 0 20px; /* Padding on the sides */
-        }
+			/* Layout for images */
+			#main {
+				display: flex;
+				flex-wrap: wrap; /* Ensures images wrap into rows if needed */
+				justify-content: space-between; /* Adds space between images */
+				margin: 0 auto;
+				max-width: 1200px; /* Optional: Limits the width of the content */
+				padding: 0 20px; /* Adds padding on both sides */
+			}
 
-        /* Style for individual image containers */
-        .thumb {
-            width: calc(50% - 20px); /* Two images per row with spacing */
-            margin: 10px; /* Margin for spacing around each image */
-            padding: 10px; /* Padding inside the container */
-            background-color: #1e1e1e; /* Dark background for image containers */
-            border-radius: 8px; /* Rounded corners */
-            border: 1px solid #444; /* Border color */
-            box-sizing: border-box; /* Ensure padding and margin are included in width calculation */
-        }
+			/* Style for individual image containers */
+			.thumb {
+				margin: 20px; /* Adds margin around each image (top/bottom: 20px, left/right: 20px) */
+				padding: 15px; /* Padding inside the container */
+				border: 1px solid #444; /* Border around each image */
+				border-radius: 8px; /* Rounded corners for each image */
+				background-color: #1e1e1e; /* Slightly lighter background for each image */
+				width: calc(50% - 40px); /* Ensures two images per row with spacing */
+				box-sizing: border-box; /* Ensures padding and margin don't overflow */
+			}
 
-        /* Ensuring images fit well inside their containers */
-        .thumb img {
-            width: 100%; /* Make image fill its container */
-            height: auto; /* Maintain image aspect ratio */
-            border-radius: 8px; /* Optional: Round the corners of images */
-        }
+			/* Ensuring images fit well within their containers */
+			.thumb .image {
+				display: block; /* Makes the image take up the full width of the container */
+				margin: 0 auto; /* Centers the image horizontally */
+				padding: 10px; /* Adds padding around the image */
+				border-radius: 8px; /* Optional: Rounds the corners of the image */
+				background-color: #f1f1f1; /* Adds a light background behind the image */
+			}
 
-        /* Text below each image */
-        .thumb h2, .thumb p {
-            margin-top: 10px;
-            margin-bottom: 10px;
-            color: #e0e0e0; /* Light color for the text */
-        }
+			/* Adds space between the text and image */
+			.thumb h2, .thumb p {
+				margin-top: 10px;
+				margin-bottom: 10px;
+				color: #e0e0e0; /* Light text color for titles and descriptions */
+			}
 
-        /* Link styling */
-        a {
-            color: #bb86fc; /* Light purple color for links */
-            text-decoration: none;
-        }
+			/* Link styling for dark mode */
+			a {
+				color: #bb86fc; /* Light purple color for links in dark mode */
+				text-decoration: none; /* Removes underline from links */
+			}
 
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
-</head>
+			a:hover {
+				text-decoration: underline; /* Underline links on hover */
+			}
 
-<body class="is-preload">
+		</style>
+	</head>
+	<body class="is-preload">
 
-    <div id="wrapper">
+		<div id="wrapper">
 
-        <!-- Header with title and navigation -->
-        <header id="header">
-            <h1><a href="index.html"><strong>3D-Gadgetz.nl</strong> by Sasha Rodriguez</a> and <a href="https://www.benjamintjoa.com" target="_blank">Benjamin Tjoa</a></h1>
-            <nav>
-                <ul>
-                    <li><a href="#footer" class="icon solid fa-info-circle">About</a></li>
-                </ul>
-            </nav>
-        </header>
+			<header id="header">
+				<h1><a href="index.html"><strong>3D-Gadgetz.nl</strong> by Sasha Rodriguez</a> and <a href="https://www.benjamintjoa.com" target="_blank">Benjamin Tjoa</a></h1>
+				<nav>
+					<ul>
+						<li><a href="#footer" class="icon solid fa-info-circle">About</a></li>
+					</ul>
+				</nav>
+			</header>
 
-        <!-- Welcome Text -->
-        <div class="welcome-text">Hello and Welcome</div>
+			<!-- Welcome Text at the top of the page -->
+			<div class="welcome-text">Hello and Welcome</div>
 
-        <!-- Main image section -->
-        <div id="main">
-            <!-- First Image Block -->
-            <article class="thumb">
-                <a href="images/fulls/gun.png" class="image"><img src="images/thumbs/pistool.png" alt="Gun" /></a>
-                <h2>Pistool</h2>
-                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-            </article>
+			<div id="main">
+				<article class="thumb">
+					<a href="images/fulls/gun.png" class="image"><img src="images/thumbs/pistool.png" alt="Gun" /></a>
+					<h2>Pistool</h2>
+					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/spinner.png" class="image"><img src="images/thumbs/spinner.png" alt="Spinner" /></a>
+					<h2>Spinner</h2>
+					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/lambo.png" class="image"><img src="images/thumbs/lambo.png" alt="Lambo" /></a>
+					<h2>Lambo</h2>
+					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/glider.png" class="image"><img src="images/thumbs/glider.png" alt="Glider" /></a>
+					<h2>Zweefvliegtuigje</h2>
+					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+				</article>
+				<article class="thumb">
+					<a href="images/thumbs/naam-sleutel-hanger.png" class="image"><img src="images/thumbs/naam-sleutel-hanger.png" alt="Sleutelhanger" /></a>
+					<h2>Sleutelhanger</h2>
+					<p>Dit item kan veranderd worden naar je eigen naam en/of op de achterkant ook telefoonnummer. Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/ice-dragon.png" class="image"><img src="images/thumbs/ice-dragon.png" alt="Ice Dragon" /></a>
+					<h2>Draak</h2>
+					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt="Mauris" /></a>
+					<h2>Mauris id tellus arcu</h2>
+					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt="Nunc Vehicula" /></a>
+					<h2>Nunc vehicula id nulla</h2>
+					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+				</article>
+				<article class="thumb">
+					<a href="images/fulls/09.jpg" class="image"><img src="images/thumbs/09.jpg" alt="Neque" /></a>
+					<h2>Neque et faucibus viverra</h2>
+					<p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
+				</article>
+			</div>
 
-            <!-- Second Image Block -->
-            <article class="thumb">
-                <a href="images/fulls/spinner.png" class="image"><img src="images/thumbs/spinner.png" alt="Spinner" /></a>
-                <h2>Spinner</h2>
-                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-            </article>
+			<footer id="footer" class="panel">
+				<div class="inner split">
+					<div>
+						<section>
+							<h2>Welkom!</h2>
+							<p>Hoi, deze website is gemaakt door Sasha Rodriguez en Benjamin Tjoa. Deze site is net gelaunched dus kan het zijn dat er problemen of errors zijn. Als dit zo is, stuur dan een mail naar 2324116@hageveld.nl (Sasha Rodriguez) of naar 2223215@hageveld.nl (Benjamin Tjoa).</p>
+						</section>
+						<section>Deze website heeft al een paar voorbeelden, maar er komen er steeds nieuw erbij. Heb je een tip of een custom disign die je wilt toevoegen, is dat natuurlijk ook mogelijk. Dat kan je mailen naar ons of snel de formulier hiernaast invullen en doorsturen.
+						</section>
+						<p class="copyright">
+							&copy; Sasha Rodriguez dankzij <a href="http://www.benjamintjoa.nl">Benjamin Tjoa</a>'s assistentie.</p>
+					</div>
+					<div>
+						<section>
+							<h2>Is er een probleem? Wij willen graag dit probleem fixen, dus stuur het snel naar ons hieronder.</h2>
+							
+							<div class="form-container">
+								<div class="form-section">
+									<h3>Sasha Rodriguez (Owner)</h3>
+									<form action="https://formspree.io/f/meoqrdny" method="POST">
+										<div class="fields">
+											<div class="field half">
+												<input type="text" name="name" id="name" placeholder="Naam" />
+											</div>
+											<div class="field half">
+												<input type="text" name="email" id="email" placeholder="Email" />
+											</div>
+											<div class="field">
+												<textarea name="message" id="message" rows="4" placeholder="Bericht"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Verstuur" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</div>
 
-            <!-- Third Image Block -->
-            <article class="thumb">
-                <a href="images/fulls/lambo.png" class="image"><img src="images/thumbs/lambo.png" alt="Lambo" /></a>
-                <h2>Lambo</h2>
-                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-            </article>
+								<div class="form-section">
+									<h3>Benjamin Tjoa (Admin)</h3>
+									<form action="https://formspree.io/f/xeoqrddy" method="POST">
+										<div class="fields">
+											<div class="field half">
+												<input type="text" name="name" id="name" placeholder="Naam" />
+											</div>
+											<div class="field half">
+												<input type="text" name="email" id="email" placeholder="Email" />
+											</div>
+											<div class="field">
+												<textarea name="message" id="message" rows="4" placeholder="Bericht"></textarea>
+											</div>
+										</div>
+										<ul class="actions">
+											<li><input type="submit" value="Verstuur" class="primary" /></li>
+											<li><input type="reset" value="Reset" /></li>
+										</ul>
+									</form>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</footer>
 
-            <!-- Fourth Image Block -->
-            <article class="thumb">
-                <a href="images/fulls/glider.png" class="image"><img src="images/thumbs/glider.png" alt="Glider" /></a>
-                <h2>Zweefvliegtuigje</h2>
-                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-            </article>
+		</div>
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.poptrox.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
 
-            <!-- More images can go here -->
-        </div>
-
-        <!-- Footer Section -->
-        <footer id="footer" class="panel">
-            <div class="inner split">
-                <div>
-                    <section>
-                        <h2>Welkom!</h2>
-                        <p>Hoi, deze website is gemaakt door Sasha Rodriguez en Benjamin Tjoa. Deze site is net gelaunched dus kan het zijn dat er problemen of errors zijn. Als dit zo is, stuur dan een mail naar 2324116@hageveld.nl (Sasha Rodriguez) of naar 2223215@hageveld.nl (Benjamin Tjoa).</p>
-                    </section>
-                    <p class="copyright">&copy; Sasha Rodriguez dankzij <a href="http://www.benjamintjoa.nl">Benjamin Tjoa</a>'s assistentie.</p>
-                </div>
-            </div>
-        </footer>
-
-    </div>
-
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.poptrox.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
-</body>
+	</body>
 </html>
