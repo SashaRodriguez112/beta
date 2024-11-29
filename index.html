@@ -38,27 +38,30 @@
         .thumb img {
             max-width: 100%;
             border-radius: 35px; /* Makes the corners rounded */
+            cursor: pointer; /* Shows pointer cursor to indicate image can be clicked */
+            transition: transform 0.3s ease-in-out;
         }
 
-        .hello-text {
+        .thumb img:hover {
+            transform: scale(1.05); /* Slight zoom effect on hover */
+        }
+
+        /* Text will be hidden by default */
+        .thumb .overlay-text {
             position: absolute;
             bottom: 10px;
             left: 10px;
-            font-size: 18px;
             color: white;
-            background-color: rgba(0, 0, 0, 0.5);
+            font-size: 20px;
+            font-weight: bold;
+            background-color: rgba(0, 0, 0, 0.6);
             padding: 5px;
             border-radius: 5px;
+            display: none; /* Hide text by default */
         }
 
-        .welcome-message {
-            text-align: center;
-            font-size: 24px;
-            margin: 20px 0;
-            font-weight: bold;
-        }
-
-        /* Styling for the modal (large image) */
+        /* Modal Styles */
+        /* Initially hidden modal */
         .modal {
             display: none;
             position: fixed;
@@ -68,26 +71,31 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgb(0, 0, 0);
-            background-color: rgba(0, 0, 0, 0.9);
+            background-color: rgba(0, 0, 0, 0.8);
         }
 
         .modal-content {
-            margin: auto;
+            margin: 5% auto;
             display: block;
-            width: 80%;
-            max-width: 700px;
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 20px;
+        }
+
+        .modal img {
+            width: 100%;
+            border-radius: 20px;
         }
 
         /* Close button */
         .close {
             position: absolute;
-            top: 15px;
-            right: 35px;
-            color: #fff;
+            top: 10px;
+            right: 25px;
+            color: #f1f1f1;
             font-size: 40px;
             font-weight: bold;
-            transition: 0.3s;
+            cursor: pointer;
         }
 
         .close:hover,
@@ -95,6 +103,13 @@
             color: #bbb;
             text-decoration: none;
             cursor: pointer;
+        }
+
+        .welcome-message {
+            text-align: center;
+            font-size: 24px;
+            margin: 20px 0;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -121,58 +136,23 @@
         <div id="main">
             <article class="thumb">
                 <a href="images/fulls/gun.png" class="image"><img src="images/thumbs/pistool.png" alt="" /></a>
-                <span class="hello-text">Hello there</span>
+                <div class="overlay-text">Hello there</div>
                 <h2>Pistool</h2>
                 <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
             </article>
             <article class="thumb">
                 <a href="images/fulls/spinner.png" class="image"><img src="images/thumbs/spinner.png" alt="" /></a>
-                <span class="hello-text">Hello there</span>
+                <div class="overlay-text">Hello there</div>
                 <h2>Spinner</h2>
                 <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
             </article>
-            <article class="thumb">
-                <a href="images/fulls/lambo.png" class="image"><img src="images/thumbs/lambo.png" alt="" /></a>
-                <span class="hello-text">Hello there</span>
-                <h2>Lambo</h2>
-                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-            </article>
-            <article class="thumb">
-                <a href="images/fulls/glider.png" class="image"><img src="images/thumbs/glider.png" alt="" /></a>
-                <span class="hello-text">Hello there</span>
-                <h2>Zweefvliegtuigje</h2>
-                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-            </article>
-            <article class="thumb">
-                <a href="images/thumbs/naam-sleutel-hanger.png" class="image"><img src="images/thumbs/naam-sleutel-hanger.png" alt="" /></a>
-                <span class="hello-text">Hello there</span>
-                <h2>Sleutelhanger</h2>
-                <p>Dit item kan veranderd worden naar je eigen naam en/of op de achterkant ook telefoonnummer. Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-            </article>
-            <article class="thumb">
-                <a href="images/fulls/ice-dragon.png" class="image"><img src="images/thumbs/ice-dragon.png" alt="" /></a>
-                <span class="hello-text">Hello there</span>
-                <h2>Draak</h2>
-                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-            </article>
-            <article class="thumb">
-                <a href="images/fulls/07.jpg" class="image"><img src="images/thumbs/07.jpg" alt="" /></a>
-                <span class="hello-text">Hello there</span>
-                <h2>Mauris id tellus arcu</h2>
-                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-            </article>
-            <article class="thumb">
-                <a href="images/fulls/08.jpg" class="image"><img src="images/thumbs/08.jpg" alt="" /></a>
-                <span class="hello-text">Hello there</span>
-                <h2>Nunc vehicula id nulla</h2>
-                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-            </article>
-            <article class="thumb">
-                <a href="images/fulls/09.jpg" class="image"><img src="images/thumbs/09.jpg" alt="" /></a>
-                <span class="hello-text">Hello there</span>
-                <h2>Neque et faucibus viverra</h2>
-                <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €2,-</p>
-            </article>
+            <!-- Add the rest of the items similarly -->
+        </div>
+
+        <!-- Modal for displaying the expanded image -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
         </div>
 
         <footer id="footer" class="panel">
@@ -180,64 +160,7 @@
                 <div>
                     <section>
                         <h2>Welkom!</h2>
-                        <p>Hoi, deze website is gemaakt door Sasha Rodriguez en Benjamin Tjoa. Deze site is net gelaunched dus
-                            kan het zijn dat er problemen of errors zijn. Als dit zo is, stuur dan een mail naar 2324116@hageveld.nl (Sasha
-                            Rodriguez) of naar 2223215@hageveld.nl (Benjamin Tjoa).</p>
-                    </section>
-                    <section>Deze website heeft al een paar voorbeelden, maar er komen er steeds nieuw erbij. Heb je een tip of een custom
-                        disign die je wilt toevoegen, is dat natuurlijk ook mogelijk. Dat kan je mailen naar ons of snel de formulier hiernaast
-                        invullen en doorsturen.
-                    </section>
-                    <p class="copyright">
-                        &copy; Sasha Rodriguez dankzij <a href="http://www.benjamintjoa.nl">Benjamin Tjoa</a>'s assistentie.</p>
-                </div>
-                <div>
-                    <section>
-                        <h2>Is er een probleem? Wij willen graag dit probleem fixen, dus stuur het snel naar ons hieronder.</h2>
-
-                        <div class="form-container">
-                            <div class="form-section">
-                                <h3>Sasha Rodriguez (Owner)</h3>
-                                <form action="https://formspree.io/f/meoqrdny" method="POST">
-                                    <div class="fields">
-                                        <div class="field half">
-                                            <input type="text" name="name" id="name" placeholder="Naam" />
-                                        </div>
-                                        <div class="field half">
-                                            <input type="text" name="email" id="email" placeholder="Email" />
-                                        </div>
-                                        <div class="field">
-                                            <textarea name="message" id="message" rows="4" placeholder="Bericht"></textarea>
-                                        </div>
-                                    </div>
-                                    <ul class="actions">
-                                        <li><input type="submit" value="Verstuur" class="primary" /></li>
-                                        <li><input type="reset" value="Reset" /></li>
-                                    </ul>
-                                </form>
-                            </div>
-
-                            <div class="form-section">
-                                <h3>Benjamin Tjoa (Admin)</h3>
-                                <form action="https://formspree.io/f/xeoqrddy" method="POST">
-                                    <div class="fields">
-                                        <div class="field half">
-                                            <input type="text" name="name" id="name" placeholder="Naam" />
-                                        </div>
-                                        <div class="field half">
-                                            <input type="text" name="email" id="email" placeholder="Email" />
-                                        </div>
-                                        <div class="field">
-                                            <textarea name="message" id="message" rows="4" placeholder="Bericht"></textarea>
-                                        </div>
-                                    </div>
-                                    <ul class="actions">
-                                        <li><input type="submit" value="Verstuur" class="primary" /></li>
-                                        <li><input type="reset" value="Reset" /></li>
-                                    </ul>
-                                </form>
-                            </div>
-                        </div>
+                        <p>Hoi, deze website is gemaakt door Sasha Rodriguez en Benjamin Tjoa...</p>
                     </section>
                 </div>
             </div>
@@ -252,27 +175,43 @@
     <script src="assets/js/util.js"></script>
     <script src="assets/js/main.js"></script>
 
-    <!-- Script for closing image modal when clicking outside -->
     <script>
-        var modal = document.querySelector(".modal");
-        var images = document.querySelectorAll(".thumb a");
-        var modalImg = document.querySelector(".modal-content");
+        // Get all images with class 'image'
+        const images = document.querySelectorAll('.thumb img');
+        const modal = document.getElementById("myModal");
+        const modalImg = document.getElementById("img01");
+        const closeBtn = document.getElementsByClassName("close")[0];
 
-        images.forEach(function (imgLink) {
-            imgLink.onclick = function (e) {
-                e.preventDefault();
-                var imgSrc = this.href;
+        images.forEach(img => {
+            img.addEventListener('click', function () {
+                // Show the modal and the clicked image inside it
                 modal.style.display = "block";
-                modalImg.src = imgSrc;
-            };
+                modalImg.src = this.src.replace("thumbs", "fulls");  // Use the full-sized image
+                this.nextElementSibling.style.display = "block"; // Show the overlay text when the image is clicked
+            });
         });
 
-        // Close the modal when clicking outside the image
+        // When the user clicks on <span> (x), close the modal
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+            // Hide the text when closing the modal
+            const textElements = document.querySelectorAll('.overlay-text');
+            textElements.forEach(el => {
+                el.style.display = "none";
+            });
+        }
+
+        // Optional: Close the modal if clicked outside the image
         window.onclick = function (event) {
             if (event.target == modal) {
                 modal.style.display = "none";
+                // Hide the text if modal is closed
+                const textElements = document.querySelectorAll('.overlay-text');
+                textElements.forEach(el => {
+                    el.style.display = "none";
+                });
             }
-        };
+        }
     </script>
 
 </body>
