@@ -12,6 +12,7 @@
     <link rel="icon" href="https://www.3d-gadgetz.nl/images/ico.ico" type="image/ico">
 
     <style>
+        /* Existing styling for the form and layout */
         .form-container {
             display: flex;
             justify-content: space-between;
@@ -38,6 +39,7 @@
         .thumb img {
             max-width: 100%;
             border-radius: 35px; /* Makes the corners rounded */
+            cursor: pointer;
         }
 
         .hello-text {
@@ -58,9 +60,9 @@
             font-weight: bold;
         }
 
-        /* Styling for the modal (large image) */
+        /* Modal Styling */
         .modal {
-            display: none;
+            display: none; /* Hidden by default */
             position: fixed;
             z-index: 1;
             left: 0;
@@ -68,7 +70,6 @@
             width: 100%;
             height: 100%;
             overflow: auto;
-            background-color: rgb(0, 0, 0);
             background-color: rgba(0, 0, 0, 0.9);
         }
 
@@ -79,7 +80,7 @@
             max-width: 700px;
         }
 
-        /* Close button */
+        /* Close button styling */
         .close {
             position: absolute;
             top: 15px;
@@ -103,7 +104,7 @@
 
     <div id="wrapper">
 
-        <!-- Welcome message added at the top of the page -->
+        <!-- Welcome message -->
         <div class="welcome-message">
             <p>Welkom bij 3d-gadgetz.nl!</p>
         </div>
@@ -119,6 +120,7 @@
         </header>
 
         <div id="main">
+            <!-- Image thumbnails, no change here -->
             <article class="thumb">
                 <a href="images/fulls/gun.png" class="image"><img src="images/thumbs/pistool.png" alt="" /></a>
                 <span class="hello-text">Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €1,25.</span>
@@ -175,104 +177,50 @@
             </article>
         </div>
 
-        <footer id="footer" class="panel">
-            <div class="inner split">
-                <div>
-                    <section>
-                        <h2>Welkom!</h2>
-                        <p>Hoi, deze website is gemaakt door Sasha Rodriguez en Benjamin Tjoa. Deze site is net gelaunched dus
-                            kan het zijn dat er problemen of errors zijn. Als dit zo is, stuur dan een mail naar 2324116@hageveld.nl (Sasha
-                            Rodriguez) of naar 2223215@hageveld.nl (Benjamin Tjoa).</p>
-                    </section>
-                    <section>Deze website heeft al een paar voorbeelden, maar er komen er steeds nieuw erbij. Heb je een tip of een custom
-                        disign die je wilt toevoegen, is dat natuurlijk ook mogelijk. Dat kan je mailen naar ons of snel de formulier hiernaast
-                        invullen en doorsturen.
-                    </section>
-                    <p class="copyright">
-                        &copy; Sasha Rodriguez dankzij <a href="http://www.benjamintjoa.nl">Benjamin Tjoa</a>'s assistentie.</p>
-                </div>
-                <div>
-                    <section>
-                        <h2>Is er een probleem? Wij willen graag dit probleem fixen, dus stuur het snel naar ons hieronder.</h2>
+        <!-- Modal for image -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="modalImg">
+        </div>
 
-                        <div class="form-container">
-                            <div class="form-section">
-                                <h3>Sasha Rodriguez (Owner)</h3>
-                                <form action="https://formspree.io/f/meoqrdny" method="POST">
-                                    <div class="fields">
-                                        <div class="field half">
-                                            <input type="text" name="name" id="name" placeholder="Naam" />
-                                        </div>
-                                        <div class="field half">
-                                            <input type="text" name="email" id="email" placeholder="Email" />
-                                        </div>
-                                        <div class="field">
-                                            <textarea name="message" id="message" rows="4" placeholder="Bericht"></textarea>
-                                        </div>
-                                    </div>
-                                    <ul class="actions">
-                                        <li><input type="submit" value="Verstuur" class="primary" /></li>
-                                        <li><input type="reset" value="Reset" /></li>
-                                    </ul>
-                                </form>
-                            </div>
-
-                            <div class="form-section">
-                                <h3>Benjamin Tjoa (Admin)</h3>
-                                <form action="https://formspree.io/f/xeoqrddy" method="POST">
-                                    <div class="fields">
-                                        <div class="field half">
-                                            <input type="text" name="name" id="name" placeholder="Naam" />
-                                        </div>
-                                        <div class="field half">
-                                            <input type="text" name="email" id="email" placeholder="Email" />
-                                        </div>
-                                        <div class="field">
-                                            <textarea name="message" id="message" rows="4" placeholder="Bericht"></textarea>
-                                        </div>
-                                    </div>
-                                    <ul class="actions">
-                                        <li><input type="submit" value="Verstuur" class="primary" /></li>
-                                        <li><input type="reset" value="Reset" /></li>
-                                    </ul>
-                                </form>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </div>
+        <footer id="footer">
+            <section>
+                <h2>About 3D-Gadgetz.nl</h2>
+                <p>Hier verkopen we 3D-geprinte objecten die je kunt kopen voor verschillende doeleinden. Van sleutelhangers tot auto's!<br></p>
+            </section>
+            <p class="copyright">&copy; 2024 3d-gadgetz.nl</p>
         </footer>
 
     </div>
 
-    <script src="assets/js/jquery.min.js"></script>
-    <script src="assets/js/jquery.dropotron.min.js"></script>
-    <script src="assets/js/browser.min.js"></script>
-    <script src="assets/js/breakpoints.min.js"></script>
-    <script src="assets/js/util.js"></script>
-    <script src="assets/js/main.js"></script>
-
-    <!-- Script for closing image modal when clicking outside -->
     <script>
-        var modal = document.querySelector(".modal");
-        var images = document.querySelectorAll(".thumb a");
-        var modalImg = document.querySelector(".modal-content");
+        // Modal functionality
+        var modal = document.getElementById("myModal");
+        var modalImg = document.getElementById("modalImg");
+        var closeBtn = document.getElementsByClassName("close")[0];
 
-        images.forEach(function (imgLink) {
-            imgLink.onclick = function (e) {
-                e.preventDefault();
-                var imgSrc = this.href;
+        // Get all the image elements
+        var images = document.querySelectorAll(".thumb img");
+
+        // Loop through each image and add an event listener for click
+        images.forEach(function (image) {
+            image.onclick = function () {
                 modal.style.display = "block";
-                modalImg.src = imgSrc;
-            };
+                modalImg.src = this.src;
+            }
         });
 
-        // Close the modal when clicking outside the image
+        // When the user clicks on the close button, close the modal
+        closeBtn.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        // Close modal if user clicks anywhere outside the modal content
         window.onclick = function (event) {
-            if (event.target == modal) {
+            if (event.target === modal) {
                 modal.style.display = "none";
             }
-        };
+        }
     </script>
 
 </body>
