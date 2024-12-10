@@ -25,11 +25,14 @@
             article.thumb {
                 flex: 1 1 calc(33.333% - 40px);
                 margin: 20px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
             }
             article.thumb img {
                 transform: scale(0.85); /* Reduce the size to 85% */
                 display: block; /* Prevent gaps caused by inline-block rendering */
-                border-radius: 100px; /* Add this line to round the corners */
+                border-radius: 15px; /* Add this line to round the corners */
             }
             .center-text {
                 text-align: center;
@@ -45,16 +48,16 @@
                 width: 100%; /* Full width */
                 height: 100%; /* Full height */
                 overflow: auto; /* Enable scroll if needed */
-                background-color: rgb(0,0,0); /* Fallback color */
-                background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+                background-color: rgba(0,0,0,0.9); /* Dark background */
                 padding-top: 60px;
             }
             .modal-content {
-                background-color: #fefefe;
-                margin: 5% auto; /* 15% from the top and centered */
+                background-color: #333; /* Dark mode */
+                color: white; /* White text */
+                margin: 5% auto; /* 5% from the top and centered */
                 padding: 20px;
                 border: 1px solid #888;
-                width: 80%; /* Could be more or less, depending on screen size */
+                width: 50%; /* Smaller size */
             }
             .close {
                 color: #aaa;
@@ -64,9 +67,15 @@
             }
             .close:hover,
             .close:focus {
-                color: black;
+                color: white;
                 text-decoration: none;
                 cursor: pointer;
+            }
+            .dark-mode-input {
+                background-color: #444;
+                color: white;
+                border: 1px solid #888;
+                padding: 5px;
             }
         </style>
     </head>
@@ -105,11 +114,6 @@
                     <a href="images/fulls/glider.png" class="image"><img src="images/thumbs/glider.png" alt="" /></a>
                     <h2>Zweefvliegtuigje</h2>
                     <p>Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €1,50</p>
-                </article>
-                <article class="thumb">
-                    <a href="images/thumbs/naam-sleutel-hanger.png" class="image"><img src="images/thumbs/naam-sleutel-hanger.png" alt="" /></a>
-                    <h2>Sleutelhanger</h2>
-                    <p>Dit item kan veranderd worden naar je eigen naam en/of op de achterkant ook telefoonnummer. Wil je dit nou kopen? Stuur een mailtje naar mij op 2324116@hageveld.nl. €1,01</p>
                 </article>
                 <article class="thumb">
                     <a href="images/fulls/fingerboard.png" class="image"><img src="images/thumbs/fingerboard.png" alt="" /></a>
@@ -158,14 +162,14 @@
                                     <form action="https://formspree.io/f/meoqrdny" method="POST">
                                         <div class="fields">
                                             <div class="field half">
-                                                <input type="text" name[_{{{CITATION{{{_1{](https://github.com/Ricardo071019/Pap/tree/fbf582824fdde4ca266e5554ffad615b777d2a67/PAP-Ricardo%2012%C2%BA%2Fpneus.php)[_{{{CITATION{{{_2{](https://github.com/varkotova/laravel_test/tree/4feca2b6e056cf92d4ff70582106e263c9f43289/elbrus.loc%2Fresources%2Fviews%2Fmassively%2Felbrus_elements.blade.php)[_{{{CITATION{{{_3{](https://github.com/SamvProgrammer/proyectoRipex/tree/3da5f99aae3acf144bdb300a3da7ad7dc1cfc558/resources%2Fviews%2Finicio.blade.php)[_{{{CITATION{{{_4{](https://github.com/anaandvia/RangPol/tree/26b9d2802bfadf0faea2dfdc99a43f04fe80fd83/index.php)[_{{{CITATION{{{_5{](https://github.com/balagudeen/cloudassignment/tree/206b6b4e6c3594ad5376ad435eeb5f825ae0c3c4/login.php)[_{{{CITATION{{{_6{](https://github.com/Magicst6/TestserverEklasse/tree/eed5546daebb4f9fd2e8b1c4b4850cada4bf9141/sites%2Fperformance.schulverwaltungheimtest.ch%2Fwp-content%2Fthemes%2Fstructr%2FPage_Scripts%2FNotenbuchArchivLehrer.php)[_{{{CITATION{{{_7{](https://github.com/AmandeepSingh97/Hotel-Booking-System/tree/f8f8867ba02fffd420a043ac5c748716a070e2db/usignup.php)[_{{{CITATION{{{_8{](https://github.com/tonycops/lalala/tree/f4221a6d39de4464e868bede644c2d31f4343c86/application%2Fviews%2Fhalaman%2Fadmin-product.php)[_{{{CITATION{{{_9{](https://github.com/juhitiwari/AASF/tree/74f2eaad2578da8e14847879006c5d9ca8b9a6c0/website%2Faasf%2Fprofile%2Fprofile.php)[_{{{CITATION{{{_10{](https://github.com/anand-surya/Client-Design-Development-Project-3/tree/a64566a2959afb3f9b75074c4296f42dc0469784/IST%20website%2Fobj%2FDebug%2Fnetcoreapp3.1%2FRazor%2FViews%2FHome%2FEmployment.cshtml.g.cs)[_{{{CITATION{{{_11{](https://github.com/sangjdev/profile/tree/992f8e96dbf1ac53e648e9f5de53db331ccc5714/profile-front%2Fcomponents%2FModal%2FSignCompModal%2Findex.js)[_{{{CITATION{{{_12{](https://github.com/kanghanan/imkc/tree/ff4b198ee4bcaceba7e8383507e0ad08c098bbaf/application%2Fviews%2Fheader.php)
-						  <input type="text" name="name" id="name" placeholder="Naam" />
+                                                <input type="text" name="name" id="name" placeholder="Naam" />
                                             </div>
                                             <div class="field half">
                                                 <input type="text" name="email" id="email" placeholder="Email" />
                                             </div>
                                             <div class="field">
-                                                <textarea name="message" id="message" rows="4" placeholder="Bericht"></textarea>
+                                                <textarea name="message" id="message" rows="4" placeholder="Bericht[_{{{CITATION{{{_1{](https://github.com/Ricardo071019/Pap/tree/fbf582824fdde4ca266e5554ffad615b777d2a67/PAP-Ricardo%2012%C2%BA%2Fpneus.php)[_{{{CITATION{{{_2{](https://github.com/varkotova/laravel_test/tree/4feca2b6e056cf92d4ff70582106e263c9f43289/elbrus.loc%2Fresources%2Fviews%2Fmassively%2Felbrus_elements.blade.php)[_{{{CITATION{{{_3{](https://github.com/SamvProgrammer/proyectoRipex/tree/3da5f99aae3acf144bdb300a3da7ad7dc1cfc558/resources%2Fviews%2Finicio.blade.php)[_{{{CITATION{{{_4{](https://github.com/anaandvia/RangPol/tree/26b9d2802bfadf0faea2dfdc99a43f04fe80fd83/index.php)[_{{{CITATION{{{_5{](https://github.com/balagudeen/cloudassignment/tree/206b6b4e6c3594ad5376ad435eeb5f825ae0c3c4/login.php)[_{{{CITATION{{{_6{](https://github.com/AhmedAbuwarda/CraftsmanProject/tree/7e62c00a064505376810f4b837894eb9d08b5671/resources%2Fviews%2Fcraftsmen.blade.php)[_{{{CITATION{{{_7{](https://github.com/koko1313/php-indjigrup/tree/9aabdb1aadf49fb7bf2128d73b7ee22d53384a1f/components%2Fstore%2Fproduct_page.php)[_{{{CITATION{{{_8{](https://github.com/JorisLousberg/room10Challenge6/tree/54830f356e2ea4ebe9ed20bd75fcb595ac34ff5a/contact_eng.php)[_{{{CITATION{{{_9{](https://github.com/omerkaptan/sinemabiletiniz/tree/539e8a1c3cac342ac88861282a70fc1abbc66316/sinemaoto%2Findex%20-%20Kopyala.php)
+							                                                <textarea name="message" id="message" rows="4" placeholder="Bericht"></textarea>
                                             </div>
                                         </div>
                                         <ul class="actions">
@@ -207,8 +211,8 @@
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <p>Enter code to access files:</p>
-                <input type="password" id="codeInput" placeholder="Enter code">
-                <button onclick="checkCode()">Submit</button>
+                <input type="password" id="codeInput" placeholder="Enter code" class="dark-mode-input">
+                <button onclick="checkCode()" class="dark-mode-input">Submit</button>
             </div>
         </div>
 
@@ -234,23 +238,28 @@
             // Get the button that opens the modal
             var btn = document.getElementById("code-link");
 
-            // Get the <span> element that closes the modal
-            var span = document.getElementsByClassName("close")[0];
+            // Get the <span> elements that close the modal
+            var spans = document.getElementsByClassName("close");
 
-            // When the user clicks the button, open the modal 
+            // When the user clicks the button, open the modal
             btn.onclick = function() {
                 modal.style.display = "block";
             }
 
             // When the user clicks on <span> (x), close the modal
-            span.onclick = function() {
-                modal.style.display = "none";
+            for (var i = 0; i < spans.length; i++) {
+                spans[i].onclick = function() {
+                    modal.style.display = "none";
+                    filesSection.style.display = "none";
+                }
             }
 
             // When the user clicks anywhere outside of the modal, close it
             window.onclick = function(event) {
                 if (event.target == modal) {
                     modal.style.display = "none";
+                } else if (event.target == filesSection) {
+                    filesSection.style.display = "none";
                 }
             }
 
