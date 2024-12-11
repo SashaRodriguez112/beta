@@ -204,13 +204,14 @@
                                 </div>
                             </div>
                         </section>
-                   </div>
+                    </div>
                 </div>
             </footer>
         </div>
 
         <!-- The Modal -->
         <div id="codeModal" class="modal">
+            <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
                 <p>Enter code to access files:</p>
@@ -224,73 +225,63 @@
             <div class="modal-content">
                 <span class="close" onclick="closeFiles()">&times;</span>
                 <h2>Select a file:</h2>
-                <button class="collapsible">My Folder</button>
-                <div class="content">
-                    <ul id="file-list">
-                        <li><a href="images/fulls/gun.png">Gun Image</a></li>
-                        <li><a href="images/fulls/spinner.png">Spinner Image</a></li>
-                        <li><a href="images/fulls/lambo.png">Lambo Image</a></li>
-                        <!-- Add more files as needed -->
-                    </ul>
-                </div>
+                <!-- List your files here -->
+                <ul>
+                    <li><a href="images/fulls/gun.png">gun</a></li>
+                    <li><a href="path/to/file2">File 2</a></li>
+                    <li><a href="path/to/file3">File 3</a></li>
+                </ul>
             </div>
         </div>
 
         <script>
-            document.addEventListener("DOMContentLoaded", function() {
-                var coll = document.getElementsByClassName("collapsible");
-                for (var i = 0; i < coll.length; i++) {
-                    coll[i].addEventListener("click", function() {
-                        this.classList.toggle("active");
-                        var content = this.nextElementSibling;
-                        if (content.style.display === "block") {
-                            content.style.display = "none";
-                        } else {
-                            content.style.display = "block";
-                        }
-                    });
-                }
+            // Get the modal
+            var modal = document.getElementById("codeModal");
+            var filesSection = document.getElementById("filesSection");
 
-                var modal = document.getElementById("codeModal");
-                var filesSection = document.getElementById("filesSection");
-                var btn = document.getElementById("code-link");
-                var spans = document.getElementsByClassName("close");
+            // Get the button that opens the modal
+            var btn = document.getElementById("code-link");
 
-                btn.onclick = function() {
-                    modal.style.display = "block";
-                }
+            // Get the <span> elements that close the modal
+            var spans = document.getElementsByClassName("close");
 
-                for (var i = 0; i < spans.length; i++) {
-                    spans[i].onclick = function() {
-                        modal.style.display = "none";
-                        filesSection.style.display = "none";
-                    }
-                }
+            // When the user clicks the button, open the modal
+            btn.onclick = function() {
+                modal.style.display = "block";
+            }
 
-                window.onclick = function(event) {
-                    if (event.target == modal) {
-                        modal.style.display = "none";
-                    } else if (event.target == filesSection) {
-                        filesSection.style.display = "none";
-                    }
-                }
-
-                function checkCode() {
-                    var code = document.getElementById("codeInput").value;
-                    if (code === "0000") {
-                        modal.style.display = "none";
-                        filesSection.style.display = "block";
-                    } else {
-                        alert("Incorrect code");
-                    }
-                }
-
-                function closeFiles() {
+            // When the user clicks on <span> (x), close the modal
+            for (var i = 0; i < spans.length; i++) {
+                spans[i].onclick = function() {
+                    modal.style.display = "none";
                     filesSection.style.display = "none";
                 }
-            });
-        </script>
+            }
 
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                } else if (event.target == filesSection) {
+                    filesSection.style.display = "none";
+                }
+            }
+
+            function checkCode() {
+                var code = document.getElementById("codeInput").value;
+                if (code === "0000") {
+                    modal.style.display = "none";
+                    filesSection.style.display = "block";
+                } else {
+                    alert("Incorrect code");
+                }
+            }
+
+            function closeFiles() {
+                filesSection.style.display = "none";
+            }
+        </script>
+        
         <script src="assets/js/jquery.min.js"></script>
         <script src="assets/js/jquery.poptrox.min.js"></script>
         <script src="assets/js/browser.min.js"></script>
