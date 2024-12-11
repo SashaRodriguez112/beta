@@ -204,89 +204,98 @@
                                 </div>
                             </div>
                         </section>
-                    </div>
+                   </div>
                 </div>
             </footer>
         </div>
 
-<!-- The Modal -->
-<div id="codeModal" class="modal">
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Enter code to access files:</p>
-        <input type="password" id="codeInput" placeholder="Enter code" class="dark-mode-input">
-        <button onclick="checkCode()" class="dark-mode-input">Submit</button>
-    </div>
-</div>
-
-<!-- The Files Section -->
-<div id="filesSection" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeFiles()">&times;</span>
-        <h2>Select a file:</h2>
-        <button class="collapsible">My Folder</button>
-        <div class="content">
-            <ul id="file-list">
-                <li><a href="images/fulls/gun.png">Gun Image</a></li>
-                <li><a href="images/fulls/spinner.png">Spinner Image</a></li>
-                <li><a href="images/fulls/lambo.png">Lambo Image</a></li>
-                <!-- Add more files as needed -->
-            </ul>
+        <!-- The Modal -->
+        <div id="codeModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <p>Enter code to access files:</p>
+                <input type="password" id="codeInput" placeholder="Enter code" class="dark-mode-input">
+                <button onclick="checkCode()" class="dark-mode-input">Submit</button>
+            </div>
         </div>
-    </div>
-</div>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        var coll = document.getElementsByClassName("collapsible");
-        for (var i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function() {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
+        <!-- The Files Section -->
+        <div id="filesSection" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeFiles()">&times;</span>
+                <h2>Select a file:</h2>
+                <button class="collapsible">My Folder</button>
+                <div class="content">
+                    <ul id="file-list">
+                        <li><a href="images/fulls/gun.png">Gun Image</a></li>
+                        <li><a href="images/fulls/spinner.png">Spinner Image</a></li>
+                        <li><a href="images/fulls/lambo.png">Lambo Image</a></li>
+                        <!-- Add more files as needed -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                var coll = document.getElementsByClassName("collapsible");
+                for (var i = 0; i < coll.length; i++) {
+                    coll[i].addEventListener("click", function() {
+                        this.classList.toggle("active");
+                        var content = this.nextElementSibling;
+                        if (content.style.display === "block") {
+                            content.style.display = "none";
+                        } else {
+                            content.style.display = "block";
+                        }
+                    });
+                }
+
+                var modal = document.getElementById("codeModal");
+                var filesSection = document.getElementById("filesSection");
+                var btn = document.getElementById("code-link");
+                var spans = document.getElementsByClassName("close");
+
+                btn.onclick = function() {
+                    modal.style.display = "block";
+                }
+
+                for (var i = 0; i < spans.length; i++) {
+                    spans[i].onclick = function() {
+                        modal.style.display = "none";
+                        filesSection.style.display = "none";
+                    }
+                }
+
+                window.onclick = function(event) {
+                    if (event.target == modal) {
+                        modal.style.display = "none";
+                    } else if (event.target == filesSection) {
+                        filesSection.style.display = "none";
+                    }
+                }
+
+                function checkCode() {
+                    var code = document.getElementById("codeInput").value;
+                    if (code === "0000") {
+                        modal.style.display = "none";
+                        filesSection.style.display = "block";
+                    } else {
+                        alert("Incorrect code");
+                    }
+                }
+
+                function closeFiles() {
+                    filesSection.style.display = "none";
                 }
             });
-        }
+        </script>
 
-        var modal = document.getElementById("codeModal");
-        var filesSection = document.getElementById("filesSection");
-        var btn = document.getElementById("code-link");
-        var spans = document.getElementsByClassName("close");
-
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        for (var i = 0; i < spans.length; i++) {
-            spans[i].onclick = function() {
-                modal.style.display = "none";
-                filesSection.style.display = "none";
-            }
-        }
-
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            } else if (event.target == filesSection) {
-                filesSection.style.display = "none";
-            }
-        }
-
-        function checkCode() {
-            var code = document.getElementById("codeInput").value;
-            if (code === "0000") {
-                modal.style.display = "none";
-                filesSection.style.display = "block";
-            } else {
-                alert("Incorrect code");
-            }
-        }
-
-        function closeFiles() {
-            filesSection.style.display = "none";
-        }
-    });
-</script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/js/jquery.poptrox.min.js"></script>
+        <script src="assets/js/browser.min.js"></script>
+        <script src="assets/js/breakpoints.min.js"></script>
+        <script src="assets/js/util.js"></script>
+        <script src="assets/js/main.js"></script>
+    </body>
+</html>
